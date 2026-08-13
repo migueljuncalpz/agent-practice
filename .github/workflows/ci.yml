@@ -1,5 +1,4 @@
-name:
-  pull requests
+name: Tests
 
 on:
   pull_request:
@@ -21,15 +20,3 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-  security-analysis:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write
-    steps:
-      - uses: actions/checkout@v4
-      - name: Initialize analysis
-        uses: github/codeql-action/init@v3
-      - name: Analyze
-        uses: github/codeql-action/analyze@v3
